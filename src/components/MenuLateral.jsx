@@ -1,5 +1,4 @@
 const MenuLateral = () => {
-
   return (
     <aside className="aplicacion__menu-lateral">
       <h1 className="aplicacion__menu-lateral-logo">Track <span className="aplicacion__menu-lateral-logo--resaltado">X</span></h1>
@@ -9,7 +8,7 @@ const MenuLateral = () => {
         <a className="aplicacion__menu-lateral-navegacion-item" href="">Inicio</a>
         <a className="aplicacion__menu-lateral-navegacion-item" href="">Gestión de envíos</a>
         <a className="aplicacion__menu-lateral-navegacion-item" href="">Gestión de clientes</a>
-        <button type='button' className="aplicacion__menu-lateral-navegacion-item" >Cerrar sesión</button>
+        <button type='button' className="aplicacion__menu-lateral-navegacion-item">Cerrar sesión</button>
       </nav>
     </aside>
   )
