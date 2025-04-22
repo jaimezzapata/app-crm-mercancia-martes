@@ -4,7 +4,7 @@ export function alertaRedireccion(redireccion, mensaje, ruta) {
   Swal.fire({
     title: mensaje,
     html: "Será redireccionado en <b></b> milisegundos.",
-    timer: 5500,
+    timer: 1500,
     icon: "success",
     didOpen: () => {
       Swal.showLoading();
