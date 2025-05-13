@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   alertaRedireccion,
-  alertaError,
+  alertaGeneral,
   generarToken,
 } from "../helpers/funciones";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ function Login() {
       localStorage.setItem("usuario", JSON.stringify(buscarUsuario()));
       alertaRedireccion(redireccion, "Bienvenido al sistema", "/home");
     } else {
-      alertaError();
+      alertaGeneral("Error", "Error de credenciales", "error");
     }
   }
 
@@ -48,7 +48,7 @@ function Login() {
       (item) => item.correo == getEmail || item.usuario == getUser
     );
     if (auth) {
-      alertaError();
+      alertaGeneral("Error", "Usuario ya existe en la base de datos", "error");
     } else {
       let usuario = {
         nombre: getName,
@@ -59,6 +59,8 @@ function Login() {
       fetch(apiUsuario, {
         method: "POST",
         body: JSON.stringify(usuario),
+      }).then(() => {
+        getUsuarios();
       });
     }
   }
