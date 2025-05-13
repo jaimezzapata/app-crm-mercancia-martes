@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { alertaRedireccion } from "../helpers/funciones";
 
 const MenuLateral = () => {
@@ -23,15 +23,15 @@ const MenuLateral = () => {
         alt="Logo"
       />
       <nav className="aplicacion__menu-lateral-navegacion">
-        <a className="aplicacion__menu-lateral-navegacion-item" href="">
+        <Link className="aplicacion__menu-lateral-navegacion-item" to="/home">
           Inicio
-        </a>
-        <a className="aplicacion__menu-lateral-navegacion-item" href="">
+        </Link>
+        <Link className="aplicacion__menu-lateral-navegacion-item" to="envios">
           Gestión de envíos
-        </a>
-        <a className="aplicacion__menu-lateral-navegacion-item" href="">
+        </Link>
+        <Link className="aplicacion__menu-lateral-navegacion-item" to="">
           Gestión de clientes
-        </a>
+        </Link>
         <button
           onClick={cerrarSesion}
           type="button"
