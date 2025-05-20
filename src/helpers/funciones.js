@@ -28,6 +28,32 @@ export function alertaGeneral(titulo, mensaje, icono) {
   });
 }
 
+export function alertaConfirmar(id, apiEnvios, getEnvios) {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    console.log(apiEnvios+"/"+id);    
+    if (result.isConfirmed) {
+      fetch(apiEnvios + "/" + id, {
+        method: "DELETE"
+      }).then(() => {
+        getEnvios()
+      })
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+    }
+  });
+}
+
 export function generarToken() {
   let token = "token_" + Math.random().toString(36).substring(2) + "-" + Math.random().toString(36).substring(2);
   return token;
