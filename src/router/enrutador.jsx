@@ -3,6 +3,7 @@ import Home from "../Home";
 import RutaProtegida from "../components/RutaProtegida";
 import GestionEnvios from "../pages/GestionEnvios";
 import GestionClientes from "../pages/GestionClientes";
+import EditarEnvio from "../pages/EditarEnvio";
 
 export let enrutador = [
   {
@@ -16,6 +17,10 @@ export let enrutador = [
       {
         path: "clientes",
         element: <GestionClientes />
+      },
+      {
+        path: "editar/:id",
+        element: <EditarEnvio />
       }
     ],
   },

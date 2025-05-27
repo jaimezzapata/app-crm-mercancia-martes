@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { alertaConfirmar } from "../helpers/funciones";
+import { Link } from "react-router-dom";
 let apiEnvios = "https://back-json-server-martes.onrender.com/envios";
 
 function GestionEnvios() {
@@ -37,7 +38,7 @@ function GestionEnvios() {
             <p>Destino: {item.destino}</p>
             <div className="card__buttons">
               <button onClick={() => eliminarEnvio(item.id)} className="card__button">Eliminar</button>
-              <button className="card__button">Editar</button>
+              <Link to={"/home/editar/"+item.id} className="card__button">Editar</Link>
             </div>
           </div>
         ))
